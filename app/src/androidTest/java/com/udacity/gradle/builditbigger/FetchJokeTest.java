@@ -2,7 +2,6 @@ package com.udacity.gradle.builditbigger;
 
 import android.test.AndroidTestCase;
 import android.test.mock.MockContext;
-import android.util.Log;
 
 import org.mockito.Mock;
 
@@ -20,19 +19,15 @@ public class FetchJokeTest extends AndroidTestCase{
     protected void setUp() throws Exception {
         super.setUp();
         joke = null;
-        fetchJoke = new FetchJoke(mockContext);
 
+        fetchJoke = new FetchJoke(mockContext);
+        assertNotNull(fetchJoke);
     }
     public void testFetchJoke(){
         try {
             if(fetchJoke!=null){
                 joke = fetchJoke.execute().get(30, TimeUnit.SECONDS);
             }
-            else {
-                Log.d("MyLOG","null asynctask");
-            }
-
-
             assertNotNull(joke);
         } catch (Exception e) {
             fail("Timeout");
