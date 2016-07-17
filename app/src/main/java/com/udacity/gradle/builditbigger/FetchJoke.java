@@ -28,16 +28,6 @@ public class FetchJoke extends AsyncTask<Void, Void, String> {
     }
 
     @Override
-    protected void onPreExecute() {
-        mProgressDialog = new ProgressDialog(mContext);
-        mProgressDialog.setMessage("loading");
-        mProgressDialog.show();
-        mProgressDialog.setCancelable(false);
-        mProgressDialog.setIndeterminate(true);
-        super.onPreExecute();
-    }
-
-    @Override
     protected String doInBackground(Void ... params) {
         if(jokeBeanApi == null) {  // Only do this once
             JokeBeanApi.Builder builder = new JokeBeanApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -63,7 +53,6 @@ public class FetchJoke extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        mProgressDialog.dismiss();
         Intent intent = new Intent(mContext,JokeActivity.class);
         intent.putExtra(JOKE_EXTRA,result);
         mContext.startActivity(intent);
