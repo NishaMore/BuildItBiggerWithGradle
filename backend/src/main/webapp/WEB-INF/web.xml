@@ -5,8 +5,8 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>com.example.shani.myapplication.backend.MyEndpoint,
-                com.example.shani.myapplication.backend.JokeBeanEndpoint</param-value>
+            <param-value>com.udacity.builditbigger.backend.MyEndpoint,
+                com.udacity.builditbigger.backend.JokeBeanEndpoint</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

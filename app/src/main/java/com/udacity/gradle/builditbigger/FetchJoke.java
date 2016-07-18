@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.example.displayjokes.JokeActivity;
-import com.example.shani.myapplication.backend.jokeBeanApi.JokeBeanApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.udacity.builditbigger.backend.jokeBeanApi.JokeBeanApi;
 
 import java.io.IOException;
 
@@ -18,6 +18,7 @@ import java.io.IOException;
  * Created by shani on 7/11/16.
  */
 public class FetchJoke extends AsyncTask<Void, Void, String> {
+    //private static MyApi jokeBeanApi = null;
     private static JokeBeanApi jokeBeanApi = null;
     private Context mContext;
     private ProgressDialog mProgressDialog;
@@ -27,12 +28,11 @@ public class FetchJoke extends AsyncTask<Void, Void, String> {
         mContext = context;
     }
 
-    @Override
-    protected String doInBackground(Void ... params) {
+    protected String doInBackground(Void ...params) {
         if(jokeBeanApi == null) {  // Only do this once
             JokeBeanApi.Builder builder = new JokeBeanApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://192.168.43.185:8080/_ah/api/")
+                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
@@ -42,13 +42,13 @@ public class FetchJoke extends AsyncTask<Void, Void, String> {
 
             jokeBeanApi = builder.build();
         }
-
         try {
-            return jokeBeanApi.getJoke().execute().getJoke();
+            return jokeBeanApi.serveJokes().execute().getJoke();
         } catch (IOException e) {
             return e.getMessage();
         }
     }
+
 
     @Override
     protected void onPostExecute(String result) {
@@ -56,8 +56,6 @@ public class FetchJoke extends AsyncTask<Void, Void, String> {
         Intent intent = new Intent(mContext,JokeActivity.class);
         intent.putExtra(JOKE_EXTRA,result);
         mContext.startActivity(intent);
-
-
     }
 
 

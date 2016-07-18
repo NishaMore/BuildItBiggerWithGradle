@@ -31,7 +31,7 @@ public class Joker {
         );
         jokeList.add("Whatever you do, always give 100%. Unless you are donating blood.");
         jokeList.add("Question: \"Which Day Of The Week Is Most Hated By Fish?\" \n" +
-                "                          Answer: \"Fry Day\"");
+                "Answer: \"Fry Day\"");
         jokeList.add("Santa Wrote Bill Gates About PC & Windows Problems.\n" +
                 "\n" +
                 "1 My Child Learned MS Word Now He Wants MS Sentence." +

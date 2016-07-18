@@ -1,13 +1,13 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/b0iZZDBe5_PgTFgFgDyyN9t6BV8\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/m78Xnyfc8onQI3Af7-mUedFRxOE\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
  "version": "v1",
  "description": "This is an API",
- "ownerDomain": "backend.myapplication.shani.example.com",
- "ownerName": "backend.myapplication.shani.example.com",
+ "ownerDomain": "backend.builditbigger.udacity.com",
+ "ownerName": "backend.builditbigger.udacity.com",
  "icons": {
   "x16": "http://www.google.com/images/icons/product/search-16.gif",
   "x32": "http://www.google.com/images/icons/product/search-32.gif"

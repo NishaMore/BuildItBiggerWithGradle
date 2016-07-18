@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 
-group = 'com.example.shani.myapplication.backend'
+group = 'com.udacity.builditbigger.backend'
 archivesBaseName = 'myApi'
 version = 'v1-1.22.0-SNAPSHOT'
 

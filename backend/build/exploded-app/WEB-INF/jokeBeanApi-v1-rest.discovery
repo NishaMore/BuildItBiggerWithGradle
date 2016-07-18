@@ -1,13 +1,13 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/_N6rkLnS7hVEDa1oKrTiGOhkz50\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/rnos51y8C-ZqI6h32vh18DZnwlo\"",
  "discoveryVersion": "v1",
  "id": "jokeBeanApi:v1",
  "name": "jokeBeanApi",
  "version": "v1",
  "description": "This is an API",
- "ownerDomain": "backend.myapplication.shani.example.com",
- "ownerName": "backend.myapplication.shani.example.com",
+ "ownerDomain": "backend.builditbigger.udacity.com",
+ "ownerName": "backend.builditbigger.udacity.com",
  "icons": {
   "x16": "http://www.google.com/images/icons/product/search-16.gif",
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
@@ -84,47 +84,10 @@
   }
  },
  "methods": {
-  "getJoke": {
-   "id": "jokeBeanApi.getJoke",
-   "path": "jokebean",
-   "httpMethod": "GET",
-   "response": {
-    "$ref": "JokeBean"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "getJokeBean": {
-   "id": "jokeBeanApi.getJokeBean",
-   "path": "jokebean/{id}",
-   "httpMethod": "GET",
-   "parameters": {
-    "id": {
-     "type": "string",
-     "required": true,
-     "format": "int64",
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "id"
-   ],
-   "response": {
-    "$ref": "JokeBean"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
-  },
-  "insertJokeBean": {
-   "id": "jokeBeanApi.insertJokeBean",
+  "serveJokes": {
+   "id": "jokeBeanApi.serveJokes",
    "path": "jokebean",
    "httpMethod": "POST",
-   "request": {
-    "$ref": "JokeBean",
-    "parameterName": "resource"
-   },
    "response": {
     "$ref": "JokeBean"
    },
