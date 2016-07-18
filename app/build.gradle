@@ -33,30 +33,19 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile 'com.google.android.gms:play-services-analytics:9.2.1'
+    compile project(path: ':backend', configuration: 'android-endpoints')
     compile project(':displayjokes')
+
     androidTestCompile 'junit:junit:4.12'
     androidTestCompile 'org.mockito:mockito-core:2.0.86-beta'
-    freeCompile 'com.google.android.gms:play-services-ads:9.2.0'
-    compile 'com.android.support:appcompat-v7:24.0.0-alpha1'
-    compile 'com.google.android.gms:play-services-analytics:9.2.0'
-    compile 'com.android.support:support-v4:24.0.0-alpha1'
-    compile 'com.google.android.gms:play-services-ads:9.2.1'
-    compile project(path: ':backend', configuration: 'android-endpoints')
+
+    freeCompile 'com.google.android.gms:play-services-ads:9.2.1'
+    freeCompile 'com.android.support:appcompat-v7:24.0.0-alpha1'
+    freeCompile 'com.android.support:support-v4:24.0.0-alpha1'
 }
 
-/*
-task runAppEngine (dependsOn: ":backend:appengineRun") {
-    project(":backend").afterEvaluate { backend ->
-        backend.extensions.appengine.daemon = true
-    }
-    doLast {
-        println "started the server!"
-    }
-}
 
-runAppEngine.finalizedBy ":backend:appengineStop"
-*/
 
 
 
