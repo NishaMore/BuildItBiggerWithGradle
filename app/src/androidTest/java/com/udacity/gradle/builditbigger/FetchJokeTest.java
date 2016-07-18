@@ -19,9 +19,9 @@ public class FetchJokeTest extends AndroidTestCase{
     protected void setUp() throws Exception {
         super.setUp();
         joke = null;
-
+        assertNotNull(mockContext);
         fetchJoke = new FetchJoke(mockContext);
-        assertNotNull(fetchJoke);
+        //assertNotNull(fetchJoke);
     }
     public void testFetchJoke(){
         try {

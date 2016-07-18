@@ -92,7 +92,8 @@ public class MainFragment extends Fragment {
 
     @Override
     public void onPause() {
-        mProgressBar.setVisibility(View.GONE);
+
         super.onPause();
+        mProgressBar.setVisibility(View.GONE);
     }
 }
